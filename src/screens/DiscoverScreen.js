@@ -5,14 +5,13 @@
 
 import React, { Component } from "react";
 import { StyleSheet, Text, View } from "react-native";
-import SearchBar from "../components/SearchBar";
 
 type Props = {};
-export default class HomeScreen extends Component<Props> {
+export default class DiscoverScreen extends Component<Props> {
   render() {
     return (
       <View style={styles.container}>
-        <Text>HomeScreen</Text>
+        <Text>test</Text>
       </View>
     );
   }
