@@ -39,6 +39,10 @@ export default createBottomTabNavigator(
 
         let iconName;
         let size = 32;
+        let style = {
+          tintColor: '#373944',
+          marginBottom: -8,
+        };
         switch (routeName) {
           case "DiscoverWorkOut":
             iconName = "discover";
@@ -68,32 +72,19 @@ export default createBottomTabNavigator(
             focused={focused}
             name={iconName}
             size={size}
-            style={{ marginBottom: -8 }}
+            style={style}
           />
         );
       }
-    })
-    // order: ["DiscoverWorkOut", "WorkOuts", "Favorites", "MyWorkOuts", "More"],
-    // // swipeEnabled: false,
-    // tabBarOptions: {
-    //   activeTintColor: "blue",
-    //   labelStyle: {
-    //     borderWidth: 0,
-    //     fontSize: 12,
-    //     marginTop: 1
-    //   },
-    //   style: {
-    //     backgroundColor: "green",
-    //     borderTopColor: "blue",
-    //     shadowColor: "black",
-    //     shadowOffset: {
-    //       height: 0,
-    //       width: 0
-    //     },
-    //     shadowOpacity: 0.12,
-    //     shadowRadius: 9
-    //   }
-    // },
-    // tabBarPosition: "bottom"
-  }
-);
+    }),
+    order: ['DiscoverWorkOut', 'WorkOuts', 'Favorites', 'MyWorkOuts', 'More'],
+    tabBarOptions: {
+      style: {
+        backgroundColor: '#e7853c',
+        color: '#e7853c',
+      },
+      labelStyle: {
+        color: '#373944',
+      }
+    },
+  });

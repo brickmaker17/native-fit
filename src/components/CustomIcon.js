@@ -13,7 +13,7 @@ type Props = {
 class CustomIcon extends PureComponent<Props> {
   render() {
     const { focused, name, size, style } = this.props;
-    console.log(this.props);
+
     let source = name;
     focused && (source += "Active");
 
