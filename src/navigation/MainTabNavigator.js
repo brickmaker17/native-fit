@@ -1,7 +1,7 @@
 import React from "react";
-import { createBottomTabNavigator } from "react-navigation";
+import { createStackNavigator, createBottomTabNavigator } from "react-navigation";
 import CustomIcon from "../components/CustomIcon";
-import WorkOutsScreen from "../screens/WorkOutsScreen";
+import WorkOutsStack from "../navigation/WorkOutsStack";
 import DiscoverScreen from "../screens/DiscoverScreen";
 import FavoritesScreen from "../screens/FavoritesScreen";
 import MoreInfoScreen from "../screens/MoreInfoScreen";
@@ -10,23 +10,22 @@ import MyWorkOutScreen from "../screens/MyWorkOutScreen";
 export default createBottomTabNavigator(
   {
     WorkOuts: {
-      navigationOptions: () => ({ tabBarLabel: "Workouts" }),
-      screen: WorkOutsScreen
+      screen: WorkOutsStack
     },
     DiscoverWorkOut: {
-      navigationOptions: () => ({ tabBarLabel: "Discover" }),
+      // navigationOptions: () => ({ tabBarLabel: "Discover" }),
       screen: DiscoverScreen
     },
     Favorites: {
-      navigationOptions: () => ({ tabBarLabel: "Favorites" }),
+      // navigationOptions: () => ({ tabBarLabel: "Favorites" }),
       screen: FavoritesScreen
     },
     More: {
-      navigationOptions: () => ({ tabBarLabel: "More" }),
+      // navigationOptions: () => ({ tabBarLabel: "More" }),
       screen: MoreInfoScreen
     },
     MyWorkOuts: {
-      navigationOptions: () => ({ tabBarLabel: "My Workouts" }),
+      // navigationOptions: () => ({ tabBarLabel: "My Workouts" }),
       screen: MyWorkOutScreen
     }
   },

@@ -5,20 +5,14 @@
 
 import React, { Component } from "react";
 import { StyleSheet, Text, View } from "react-native";
+import SearchBar from "../components/SearchBar";
 
 type Props = {};
-export default class DiscoverScreen extends Component<Props> {
-  static navigationOptions = ({ navigation }) => {
-    return {
-        title: 'Discover',
-    };
-  };
-
-
+export default class LoginScreen extends Component<Props> {
   render() {
     return (
       <View style={styles.container}>
-        <Text>Discover</Text>
+        <Text>HomeScreen</Text>
       </View>
     );
   }

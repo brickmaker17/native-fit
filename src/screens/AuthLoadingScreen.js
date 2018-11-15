@@ -4,15 +4,15 @@
  */
 
 import React, { Component } from "react";
-import { StyleSheet, Text, View } from "react-native";
-import SearchBar from "../components/SearchBar";
+import { StyleSheet, View } from "react-native";
+import Loading from "../components/Loading";
 
 type Props = {};
-export default class HomeScreen extends Component<Props> {
+export default class AuthLoadingScreen extends Component<Props> {
   render() {
     return (
       <View style={styles.container}>
-        <Text>HomeScreen</Text>
+        <Loading />
       </View>
     );
   }

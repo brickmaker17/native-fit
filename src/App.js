@@ -5,12 +5,11 @@
 
 import React, { Component } from "react";
 import { StyleSheet, View } from "react-native";
-import RootStack from "./navigation/RootStack";
-import WorkOutsScreen from "./screens/WorkOutsScreen";
+import ConnectedApp from "./ConnectedApp";
 
 type Props = {};
 export default class App extends Component<Props> {
   render() {
-    return <RootStack />;
+    return <ConnectedApp />;
   }
 }
