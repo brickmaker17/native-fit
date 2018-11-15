@@ -4,12 +4,10 @@ import MainTabNavigator from "./MainTabNavigator";
 import WorkOutsScreen from "../screens/WorkOutsScreen";
 import AuthLoadingScreen from "../screens/AuthLoadingScreen";
 
-const AppStack = createStackNavigator({ Home: MainTabNavigator});
-
 export default createSwitchNavigator(
   {
     AuthLoading: AuthLoadingScreen,
-    Home: AppStack,
+    Home: MainTabNavigator,
   },
   {
     initialRouteName: 'Home',

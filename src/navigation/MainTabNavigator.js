@@ -30,6 +30,7 @@ export default createBottomTabNavigator(
     }
   },
   {
+    headerMode: 'screen',
     animationEnabled: false,
     initialRouteName: "DiscoverWorkOut",
     navigationOptions: ({ navigation }) => ({

@@ -10,7 +10,7 @@ type Props = {};
 export default class DiscoverScreen extends Component<Props> {
   static navigationOptions = ({ navigation }) => {
     return {
-        title: 'Discover',
+        headerTitle: 'Discover',
     };
   };
 
