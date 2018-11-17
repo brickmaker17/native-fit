@@ -10,7 +10,7 @@ type Props = {};
 export default class WorkOutsScreen extends Component<Props> {
   static navigationOptions = () => {
     return {
-      headerTitle: 'butts'
+      headerTitle: 'WorkOuts'
     }
   }
 

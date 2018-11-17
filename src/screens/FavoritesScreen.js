@@ -9,6 +9,11 @@ import SearchBar from "../components/SearchBar";
 
 type Props = {};
 export default class FavoritesScreen extends Component<Props> {
+  static navigationOptions = ({ navigation }) => {
+    return {
+        headerTitle: 'Favorites',
+    };
+  };
   render() {
     return (
       <View style={styles.container}>

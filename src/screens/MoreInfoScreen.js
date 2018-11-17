@@ -9,6 +9,11 @@ import SearchBar from "../components/SearchBar";
 
 type Props = {};
 export default class MoreInfoScreen extends Component<Props> {
+  static navigationOptions = ({ navigation }) => {
+    return {
+        headerTitle: 'Info',
+    };
+  };
   render() {
     return (
       <View style={styles.container}>

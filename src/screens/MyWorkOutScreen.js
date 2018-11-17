@@ -9,6 +9,11 @@ import SearchBar from "../components/SearchBar";
 
 type Props = {};
 export default class MyWorkOutScreen extends Component<Props> {
+  static navigationOptions = ({ navigation }) => {
+    return {
+        headerTitle: 'My Workouts',
+    };
+  };
   render() {
     return (
       <View style={styles.container}>

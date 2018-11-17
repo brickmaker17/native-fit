@@ -2,6 +2,7 @@ import React from "react";
 import { createStackNavigator, createBottomTabNavigator } from "react-navigation";
 import CustomIcon from "../components/CustomIcon";
 import WorkOutsStack from "../navigation/WorkOutsStack";
+import WorkOutsScreen from '../screens/WorkOutsScreen';
 import DiscoverScreen from "../screens/DiscoverScreen";
 import FavoritesScreen from "../screens/FavoritesScreen";
 import MoreInfoScreen from "../screens/MoreInfoScreen";
@@ -10,29 +11,25 @@ import MyWorkOutScreen from "../screens/MyWorkOutScreen";
 export default createBottomTabNavigator(
   {
     WorkOuts: {
-      screen: WorkOutsStack
+      screen: createStackNavigator({ WorkOuts: { screen: WorkOutsScreen }})
     },
-    DiscoverWorkOut: {
-      // navigationOptions: () => ({ tabBarLabel: "Discover" }),
-      screen: DiscoverScreen
+    Discover: {
+      screen: createStackNavigator({ Discover: { screen: DiscoverScreen }})
     },
     Favorites: {
-      // navigationOptions: () => ({ tabBarLabel: "Favorites" }),
-      screen: FavoritesScreen
+      screen: createStackNavigator({ Favorites: { screen: FavoritesScreen }})
     },
     More: {
-      // navigationOptions: () => ({ tabBarLabel: "More" }),
-      screen: MoreInfoScreen
+      screen: createStackNavigator({ More: { screen: MoreInfoScreen }})
     },
     MyWorkOuts: {
-      // navigationOptions: () => ({ tabBarLabel: "My Workouts" }),
-      screen: MyWorkOutScreen
+      screen: createStackNavigator({ MyWorkOuts: { screen: MyWorkOutScreen }})
     }
   },
   {
     headerMode: 'screen',
     animationEnabled: false,
-    initialRouteName: "DiscoverWorkOut",
+    initialRouteName: "Discover",
     navigationOptions: ({ navigation }) => ({
       tabBarIcon: ({ focused }) => {
         const { routeName } = navigation.state;
@@ -44,7 +41,7 @@ export default createBottomTabNavigator(
           marginBottom: -8,
         };
         switch (routeName) {
-          case "DiscoverWorkOut":
+          case "Discover":
             iconName = "discover";
             break;
           case "WorkOuts":
@@ -77,7 +74,7 @@ export default createBottomTabNavigator(
         );
       }
     }),
-    order: ['DiscoverWorkOut', 'WorkOuts', 'Favorites', 'MyWorkOuts', 'More'],
+    order: ['Discover', 'WorkOuts', 'Favorites', 'MyWorkOuts', 'More'],
     tabBarOptions: {
       style: {
         backgroundColor: '#e7853c',
