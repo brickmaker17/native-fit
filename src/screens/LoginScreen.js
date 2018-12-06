@@ -4,7 +4,7 @@
  */
 
 import React, { Component } from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { Button, StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native";
 import SearchBar from "../components/SearchBar";
 
 type Props = {};
@@ -13,6 +13,15 @@ export default class LoginScreen extends Component<Props> {
     return (
       <View style={styles.container}>
         <Text>HomeScreen</Text>
+        <TextInput 
+          value = 'Username'
+        />
+        <TextInput 
+          value = 'password'
+        />
+        <Button 
+          title = 'LOG IN'
+        />
       </View>
     );
   }
