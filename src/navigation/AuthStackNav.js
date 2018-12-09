@@ -3,6 +3,11 @@ import Login from '../screens/LoginScreen';
 
 export default createStackNavigator(
     {
-        Login: Login
+        Login: {
+            navigationOptions: () => ({
+                header: null,
+            }),
+            screen: Login,
+        }
     }
 );

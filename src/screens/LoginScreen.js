@@ -4,7 +4,15 @@
  */
 
 import React, { Component } from "react";
-import { Button, StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native";
+import { 
+  Button, 
+  KeyboardAvoidingView, 
+  StyleSheet, 
+  Text, 
+  TextInput, 
+  TouchableOpacity, 
+  View 
+} from "react-native";
 import SearchBar from "../components/SearchBar";
 
 type Props = {};
@@ -12,16 +20,20 @@ export default class LoginScreen extends Component<Props> {
   render() {
     return (
       <View style={styles.container}>
-        <Text>HomeScreen</Text>
-        <TextInput 
-          value = 'Username'
-        />
-        <TextInput 
-          value = 'password'
-        />
-        <Button 
-          title = 'LOG IN'
-        />
+        <Text>Fit</Text>
+        <KeyboardAvoidingView >
+          <TextInput
+            style={styles.input}
+            placeholder = 'Username'
+          />
+          <TextInput
+            style={styles.input}
+            placeholder = 'password'
+          />
+          <Button 
+            title = 'LOGIN'
+          />
+        </KeyboardAvoidingView>
       </View>
     );
   }
@@ -33,6 +45,12 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     backgroundColor: "#F5FCFF"
+  },
+  input: {
+    borderBottomColor: 'blue',
+    borderBottomWidth: 1,
+    height: 35,
+    marginBottom: 10,
   },
   welcome: {
     fontSize: 20,
