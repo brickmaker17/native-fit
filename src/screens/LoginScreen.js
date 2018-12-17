@@ -6,17 +6,39 @@
 import React, { Component } from "react";
 import { 
   Button, 
-  KeyboardAvoidingView, 
+  KeyboardAvoidingView,
+  Modal, 
   StyleSheet, 
   Text, 
   TextInput, 
   TouchableOpacity, 
   View 
 } from "react-native";
-import SearchBar from "../components/SearchBar";
+import { Auth } from 'aws-amplify';
 
 type Props = {};
 export default class LoginScreen extends Component<Props> {
+  constructor(props) {
+    super(props);
+    this.state = {
+      email: '',
+      password: '',
+    };
+  }
+
+  handleSignIn = () => {
+    const { email, password } = this.state;
+    Auth.signIn(email, password)
+      // If we are successful, navigate to Home screen
+      .then(() => this.props.navigation.navigate('Home'))
+      // On failure, display error in console
+      .catch(err => console.log(err));
+  }
+
+  handleSignUp = () => {
+    this.props.navigation.navigate('Signup')
+  }
+
   render() {
     return (
       <View style={styles.container}>
@@ -24,15 +46,31 @@ export default class LoginScreen extends Component<Props> {
         <KeyboardAvoidingView >
           <TextInput
             style={styles.input}
-            placeholder = 'Username'
+            keyboardType='email-address'
+            placeholder="my@email.com"
+            onChangeText={
+            // Set this.state.email to the value in this Input box
+            (value) => this.setState({ email: value })
+          }
           />
           <TextInput
             style={styles.input}
-            placeholder = 'password'
+            placeholder="p@ssw0rd123"
+            onChangeText={
+            // Set this.state.password to the value in this Input box
+            value => this.setState({ password: value })
+          }
           />
           <Button 
             title = 'LOGIN'
+            onPress={ this.handleSignIn }
           />
+          <View>
+            <Text>Don't have a account</Text>
+            <Button title = 'Sign Up'
+            onPress={ this.handleSignUp }
+             />
+          </View>
         </KeyboardAvoidingView>
       </View>
     );

@@ -1,0 +1,14 @@
+{
+    "providers": {
+        "awscloudformation": {
+            "AuthRoleName": "ativit-20181213234601-authRole",
+            "UnauthRoleArn": "arn:aws:iam::352775899463:role/ativit-20181213234601-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::352775899463:role/ativit-20181213234601-authRole",
+            "Region": "us-east-1",
+            "DeploymentBucketName": "ativit-20181213234601-deployment",
+            "UnauthRoleName": "ativit-20181213234601-unauthRole",
+            "StackName": "ativit-20181213234601",
+            "StackId": "arn:aws:cloudformation:us-east-1:352775899463:stack/ativit-20181213234601/ec39bab0-ff6b-11e8-b3e9-0aaa9d7b8aca"
+        }
+    }
+}
