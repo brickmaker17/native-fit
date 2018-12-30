@@ -4,7 +4,8 @@
  */
 
 import React, { Component } from "react";
-import { ImageBackground, StyleSheet, Text, View } from "react-native";
+import { ImageBackground, StyleSheet, Text, TextInput, View } from "react-native";
+import Lifting from '../assets/images/Lifting.jpg';
 
 type Props = {};
 export default class DiscoverScreen extends Component<Props> {
@@ -25,9 +26,10 @@ export default class DiscoverScreen extends Component<Props> {
 
   render() {
     return (
-      <ImageBackground source={require('../assets/images/Lifting.jpg')} style={{width: '100%', height: '100%'}}>
+      <ImageBackground source={Lifting} style={{width: '100%', height: '100%'}}>
         <View style={styles.container}>
           <Text>Discover</Text>
+          <TextInput style={styles.input} placeholder='Exercise Name' />
         </View>
       </ImageBackground>
     );
@@ -39,7 +41,10 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    // backgroundColor: "#F5FCFF"
+    backgroundColor: "rgba(0, 0, 0, 0.5)"
+  },
+  input: {
+    backgroundColor: "#ffffff"
   },
   welcome: {
     fontSize: 20,

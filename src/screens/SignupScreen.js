@@ -86,7 +86,7 @@ export default class SignupScreen extends Component<Props> {
           />
           <TextInput
             style={styles.input}
-            placeholder="p@ssw0rd123"
+            placeholder="p@ssw0rd"
             onChangeText={
             // Set this.state.confirmPassword to the value in this Input box
             (value) => this.setState({ confirmPassword: value })
@@ -96,12 +96,12 @@ export default class SignupScreen extends Component<Props> {
             title = 'Sign Up'
             onPress={ this.handleSignUp }
           />
-          <View>
+          <View style={styles.buttonWrapper}>
               <Text>Have a account</Text>
-                <Button 
-                title = 'LOGIN'
-                onPress={ this.handleSignIn }
-                />
+              <TouchableOpacity style={styles.button}
+                onPress={ this.handleSignIn }>
+              <Text style={styles.login}>Login</Text>
+            </TouchableOpacity>
           </View>
         </KeyboardAvoidingView>
         <Modal
@@ -129,6 +129,14 @@ export default class SignupScreen extends Component<Props> {
 }
 
 const styles = StyleSheet.create({
+  buttonWrapper: {
+    justifyContent: "center",
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+  },
+  button: {
+    marginLeft: 5
+  },
   container: {
     flex: 1,
     justifyContent: "center",
@@ -140,6 +148,9 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
     height: 35,
     marginBottom: 10,
+  },
+  login: {
+    color: '#e7853c'
   },
   welcome: {
     fontSize: 20,
